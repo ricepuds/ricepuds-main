@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>과학실</title>
+  <meta name="description" content="과학실 홈페이지와 준비실 시약 관리 화면">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="과학실 홈">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Science Lab</span>
+    </a>
+
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="#spaces">공간</a>
+      <a href="#prep-room" data-open-prep>준비실</a>
+      <a href="#" data-soon>안전</a>
+      <a href="#" data-soon>문의</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="auth-shell" data-auth-shell>
+        <button class="auth-button primary" type="button" data-auth-open="login">로그인</button>
+        <button class="auth-button secondary" type="button" data-auth-open="signup">회원가입</button>
+        <div class="user-menu" data-user-menu hidden>
+          <span class="user-avatar" data-user-avatar aria-hidden="true"></span>
+          <span class="user-summary">
+            <strong data-user-name></strong>
+            <small data-user-role></small>
+          </span>
+          <button type="button" data-sign-out>로그아웃</button>
+        </div>
+      </div>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="다크 모드로 전환" aria-pressed="false"></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">School Science Room</p>
+        <h1 id="hero-title">과학실에서 시작되는<br><span>작은 발견들</span></h1>
+        <p class="hero-text">
+          실험 안내, 탐구 기록, 안전 수칙을 차분하게 담아낼 과학실 홈페이지입니다.
+          준비실에는 시약 분류와 잔량을 확인할 수 있는 관리 화면을 연결했습니다.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#spaces">공간 보기</a>
+          <a class="button secondary" href="#prep-room" data-open-prep>준비실 열기</a>
+        </div>
+
+        <p class="hero-note">
+          <span aria-hidden="true"></span>
+          시약 데이터는 오송고 시약 관리 대장을 기준으로 구성했습니다.
+        </p>
+      </div>
+
+      <div class="hero-visual" aria-label="과학실 이미지">
+        <div class="window-grid" aria-hidden="true"></div>
+        <div class="shelf" aria-hidden="true">
+        </div>
+        <div class="flask flask-a" aria-hidden="true">
+          <div></div>
+        </div>
+        <div class="flask flask-b" aria-hidden="true">
+          <div></div>
+        </div>
+        <div class="microscope" aria-hidden="true">
+          <span class="scope-head"></span>
+          <span class="scope-arm"></span>
+          <span class="scope-body"></span>
+          <span class="scope-stage"></span>
+          <span class="scope-base"></span>
+        </div>
+        <div class="desk" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="spaces" id="spaces" aria-labelledby="spaces-title">
+      <div class="section-head">
+        <p class="eyebrow">Lab Spaces</p>
+        <h2 id="spaces-title">과학실 공간</h2>
+        <p>필요한 공간을 선택하세요.</p>
+      </div>
+
+      <div class="spaces-grid">
+        <article class="space-card" style="--space-accent: #1b6b5f;" data-space-card data-room="prep" tabindex="0" role="button" aria-label="준비실 열기">
+          <div class="room-model" aria-hidden="true">
+            <span class="room-floor"></span>
+            <span class="room-wall left"></span>
+            <span class="room-wall back"></span>
+            <span class="room-table"></span>
+            <span class="room-dot"></span>
+          </div>
+          <div class="space-info">
+            <span>01</span>
+            <h3>준비실</h3>
+            <p>시약과 실험 도구를 분류하고 관리하는 공간</p>
+          </div>
+        </article>
+
+        <article class="space-card" style="--space-accent: #2b8d92;" data-space-card tabindex="0" role="button" aria-label="화학실 선택">
+          <div class="room-model" aria-hidden="true">
+            <span class="room-floor"></span>
+            <span class="room-wall left"></span>
+            <span class="room-wall back"></span>
+            <span class="room-table"></span>
+            <span class="room-dot"></span>
+          </div>
+          <div class="space-info">
+            <span>02</span>
+            <h3>화학실</h3>
+            <p>용액 반응과 물질 변화를 관찰하는 공간</p>
+          </div>
+        </article>
+
+        <article class="space-card" style="--space-accent: #315a9d;" data-space-card tabindex="0" role="button" aria-label="생명과학실 선택">
+          <div class="room-model" aria-hidden="true">
+            <span class="room-floor"></span>
+            <span class="room-wall left"></span>
+            <span class="room-wall back"></span>
+            <span class="room-table"></span>
+            <span class="room-dot"></span>
+          </div>
+          <div class="space-info">
+            <span>03</span>
+            <h3>생명과학실</h3>
+            <p>표본과 생물 자료를 관찰하는 공간</p>
+          </div>
+        </article>
+
+        <article class="space-card" style="--space-accent: #e85f45;" data-space-card tabindex="0" role="button" aria-label="물리실 선택">
+          <div class="room-model" aria-hidden="true">
+            <span class="room-floor"></span>
+            <span class="room-wall left"></span>
+            <span class="room-wall back"></span>
+            <span class="room-table"></span>
+            <span class="room-dot"></span>
+          </div>
+          <div class="space-info">
+            <span>04</span>
+            <h3>물리실</h3>
+            <p>힘, 전기, 파동 실험을 진행하는 공간</p>
+          </div>
+        </article>
+
+        <article class="space-card" style="--space-accent: #f0b942;" data-space-card tabindex="0" role="button" aria-label="지구과학실 선택">
+          <div class="room-model" aria-hidden="true">
+            <span class="room-floor"></span>
+            <span class="room-wall left"></span>
+            <span class="room-wall back"></span>
+            <span class="room-table"></span>
+            <span class="room-dot"></span>
+          </div>
+          <div class="space-info">
+            <span>05</span>
+            <h3>지구과학실</h3>
+            <p>암석, 대기, 천체 자료를 탐구하는 공간</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="prep-room" id="prep-room" aria-labelledby="prep-title" hidden>
+      <div class="prep-shell">
+        <h2 class="sr-only" id="prep-title">준비실 시약 관리</h2>
+        <header class="prep-topbar">
+          <a class="prep-brand" href="#prep-room" aria-label="준비실 시약 관리">
+            <span>OS</span>
+            <strong>오송고 과학실</strong>
+          </a>
+          <nav class="prep-nav" aria-label="준비실 메뉴">
+            <a class="is-active" href="#prep-room">시약</a>
+            <a href="#" data-soon>소모품</a>
+            <a href="#" data-soon>사용 기록</a>
+          </nav>
+          <div class="prep-actions">
+            <div class="auth-shell" data-auth-shell>
+              <button class="auth-button primary" type="button" data-auth-open="login">로그인</button>
+              <button class="auth-button secondary" type="button" data-auth-open="signup">회원가입</button>
+              <div class="user-menu" data-user-menu hidden>
+                <span class="user-avatar" data-user-avatar aria-hidden="true"></span>
+                <span class="user-summary">
+                  <strong data-user-name></strong>
+                  <small data-user-role></small>
+                </span>
+                <button type="button" data-sign-out>로그아웃</button>
+              </div>
+            </div>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="다크 모드로 전환" aria-pressed="false"></button>
+            <button class="prep-close" type="button" id="close-prep">← 뒤로가기</button>
+          </div>
+        </header>
+
+        <div class="prep-layout">
+          <aside class="prep-filter" aria-label="시약 필터">
+            <div class="filter-heading">
+              <h2>필터</h2>
+              <button type="button" id="reset-filters">초기화</button>
+            </div>
+
+            <div class="filter-block">
+              <p>분류</p>
+              <div class="category-list" id="category-list"></div>
+            </div>
+
+            <div class="filter-block">
+              <p>상태</p>
+              <div class="status-list">
+                <button class="status-chip is-active" type="button" data-status="all">전체</button>
+                <button class="status-chip" type="button" data-status="toxic">유독물질</button>
+                <button class="status-chip" type="button" data-status="low">잔량 부족</button>
+              </div>
+            </div>
+
+            <div class="filter-block">
+              <p>요약</p>
+              <div class="filter-stats">
+                <div>
+                  <span id="total-reagents">0</span>
+                  <small>전체 시약</small>
+                </div>
+                <div>
+                  <span id="toxic-reagents">0</span>
+                  <small>유독물질</small>
+                </div>
+                <div>
+                  <span id="low-reagents">0</span>
+                  <small>잔량 부족</small>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <div class="prep-main">
+            <section class="admin-panel" data-admin-panel hidden>
+              <div class="admin-panel-head">
+                <div>
+                  <p class="eyebrow">Admin</p>
+                  <h2>관리자 도구</h2>
+                  <p>관리자는 계정 권한을 관리하고 시약 잔량을 표에서 직접 수정할 수 있습니다.</p>
+                </div>
+                <span class="admin-badge">관리자 전용</span>
+              </div>
+
+              <div class="admin-grid">
+                <article class="admin-card">
+                  <header>
+                    <h3>계정 관리</h3>
+                    <span><strong data-account-count>0</strong>명</span>
+                  </header>
+                  <div class="account-list" data-account-list></div>
+                </article>
+
+                <article class="admin-card">
+                  <header>
+                    <h3>시약 잔량 수정</h3>
+                    <span>표에서 즉시 저장</span>
+                  </header>
+                  <p class="admin-help">각 시약의 현재 잔량 입력칸을 수정한 뒤 저장을 누르면 이 브라우저에 변경값이 보관됩니다.</p>
+                </article>
+              </div>
+            </section>
+
+            <div class="search-box">
+              <span class="search-icon" aria-hidden="true"></span>
+              <label class="sr-only" for="reagent-search">시약 검색</label>
+              <input id="reagent-search" type="search" placeholder="시약명, 화학식, IUPAC명 검색">
+              <button type="button" id="search-button" aria-label="검색">→</button>
+            </div>
+
+            <div class="table-meta">
+              <p><strong id="visible-count">0</strong>개 시약</p>
+              <div class="sort-tabs" aria-label="정렬">
+                <span>정렬</span>
+                <button class="is-active" type="button" data-sort="id">번호</button>
+                <button type="button" data-sort="category">분류</button>
+                <button type="button" data-sort="name">이름</button>
+                <button type="button" data-sort="remaining">잔량</button>
+              </div>
+            </div>
+
+            <div class="reagent-table-wrap">
+              <table class="reagent-table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">분류</th>
+                    <th scope="col">시약명</th>
+                    <th scope="col">화학식</th>
+                    <th scope="col">현재 잔량</th>
+                    <th scope="col">상태</th>
+                    <th scope="col" data-admin-table-column hidden>관리</th>
+                  </tr>
+                </thead>
+                <tbody id="reagent-table-body"></tbody>
+              </table>
+              <p class="empty-state" id="empty-state" hidden>검색 결과가 없습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="auth-modal" data-auth-modal hidden>
+    <div class="auth-backdrop" data-auth-close></div>
+    <section class="auth-dialog" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+      <button class="auth-close" type="button" data-auth-close aria-label="닫기">×</button>
+      <p class="eyebrow">Science Lab Account</p>
+      <h2 id="auth-title" data-auth-title>로그인</h2>
+
+      <form class="auth-form" data-auth-form>
+        <label class="auth-field" data-signup-only>
+          <span>이름</span>
+          <input type="text" name="name" autocomplete="name">
+        </label>
+
+        <label class="auth-field">
+          <span>이메일</span>
+          <input type="text" name="email" inputmode="email" autocomplete="email" required>
+        </label>
+
+        <label class="auth-field">
+          <span>비밀번호</span>
+          <input type="password" name="password" autocomplete="current-password" required minlength="6">
+        </label>
+
+        <label class="auth-field" data-signup-only>
+          <span>비밀번호 확인</span>
+          <input type="password" name="confirmPassword" autocomplete="new-password" minlength="6">
+        </label>
+
+        <p class="auth-message" data-auth-message role="alert"></p>
+        <button class="auth-submit" type="submit" data-auth-submit>로그인</button>
+      </form>
+
+      <button class="auth-switch" type="button" data-auth-switch>회원가입으로 전환</button>
+    </section>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="data/reagents.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
